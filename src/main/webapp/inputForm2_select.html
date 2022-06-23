@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>성적 추가</title>
+</head>
+<body>
+	
+		<!--  ##########출력 시작########## -->
+		<div class="title"> 성적 조회 후 정정/삭제</div>
+		<br>
+		<br>
+
+		<div class="container">
+		
+			<form method="post" action="./dataShowREC.jsp">
+				<table class="button">
+					<tr>
+						<td width="100" align="center">조회할 학번</td>
+						<td width="300" align="center">
+						<!--max="2147483647"-->
+						<input type="number" id="input_studentid" name="selectedID" min="209901" onchange="idCheck(this)" onkeyup="idCheck(this)" onkeydown="idCheck(this)">
+						<input type="submit" value="조회">
+						</td>
+					</tr>
+				</table>
+				<table class="content_table">
+					<tr>
+						<td class="input_category" width="100" align="center">이름</td>
+						<td class="input_content" width="300" align="center"><input type="text" readonly name="name1" id="name" maxlength="20"></td>
+					</tr>
+					<tr>
+						<td class="input_category" align="center">학번</td>
+						<td class="input_content" align="center"><input type="number" readonly name="studentid1" min="209901" id="studentid"></td>
+					</tr>
+					<tr>
+						<td class="input_category" align="center">국어</td>
+						<td class="input_content" align="center"><input type="number" readonly name="kor1" min="0" max="100" id="korean"></td>
+					</tr >
+					<tr>
+						<td class="input_category" align="center">영어</td>
+						<td class="input_content" align="center"><input type="number" readonly name="eng1" min="0" max="100" id="english"></td>
+					</tr>
+					<tr>
+						<td class="input_category" align="center">수학</td>
+						<td class="input_content" align="center"><input type="number" readonly name="mat1" min="0" max="100" id="math"></td>
+					</tr>
+				</table>
+				<br>
+				<table class="notice_table">
+				<tr>
+					<td>* 이름 : 최대 20자</td>
+				</tr>
+				<tr>
+					<td>* 점수 : 0점~100점 (숫자만 입력)</td>
+				</tr>
+				</table>
+			</form>
+		</div>
+	<script>
+	    function idCheck(obj){
+			let reg = /[\{\}\[\]\/?.,;:|\-_+<>@\#$%&\'\"\\\()\=`~!^*\s]/gi;
+			if (reg.test(obj.value)){
+				alert("특수 문자나 숫자, 띄어쓰기는 입력하실 수 없습니다.");
+				obj.value = obj.value.substring(0, 0);
+			}
+		}
+		
+		window.onload = function() {
+			document.querySelector('form').addEventListener('submit', function(e){
+			if(document.getElementById('input_studentid').value == ''){
+				e.preventDefault()//이름 미입력을 방지
+				alert('조회할 학번을 입력하세요')
+			} 
+			});
+		}
+	</script>
+	<style>
+		body {
+			background-color: #E5CCFF;
+			color: black;
+			font-weight: bold;
+			margin: auto;
+			padding-top: 2%;
+			padding-bottom: 3%;
+		}
+		.title {
+			font-size: 30pt;
+			text-align: center;
+		}
+		.small_title {
+			font-size: 20pt;
+			text-align: center;
+		}
+		.input_category {
+			width: 100;
+			border: 1px solid black;
+		}
+		.input_content {
+			width: 200;
+			border: 1px solid black;
+		}
+		.container {
+			item-align: center;
+		}
+		.button {
+			width: 40%;
+			margin: auto;
+			text-align: center;
+		}
+		.content_table {
+			border-spacing: 0;
+			width: 40%;
+			border: 1px solid black;
+			margin: auto;
+			text-align: center;
+		}
+		.notice_table {
+			border-spacing: 0;
+			width: 20%;
+			border: 0px solid black;
+			margin: auto;
+		}
+	</style>
+</body>
+</html>
