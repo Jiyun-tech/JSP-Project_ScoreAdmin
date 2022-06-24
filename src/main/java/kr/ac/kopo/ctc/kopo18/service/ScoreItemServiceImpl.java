@@ -144,6 +144,9 @@ public class ScoreItemServiceImpl implements ScoreItemService {
 		p.setListFirst(fList);
 		
 		int lList = fList + pageSize -1;
+		if (lList > nnPage) {
+			lList = nnPage;
+		}
 		p.setListLast(lList);
 		
 		return p;		// 테스트 --> ScoreItemServiceTest

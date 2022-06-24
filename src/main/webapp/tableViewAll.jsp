@@ -136,16 +136,14 @@
 		<td width="50"><p align="center"><a class="alink" href="./tableViewAll.jsp?from=<c:out value="${p.pPage}"/>&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> < </a></p></td>
 
 		<c:forEach var="i" begin="${p.listFirst}" end="${p.listLast}" step="1">
-			<c:if test="${i <= p.nnPage }">
-				<c:choose>
-					<c:when test="${i eq p.cPage}">
-					<td width=50 class="selectedPage"><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
-					</c:when>
-					<c:otherwise>
-					<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
-					</c:otherwise>
-				</c:choose>
-			</c:if>
+			<c:choose>
+				<c:when test="${i eq p.cPage}">
+				<td width=50 class="selectedPage"><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
+				</c:when>
+				<c:otherwise>
+				<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
+				</c:otherwise>
+			</c:choose>
 		</c:forEach>
 				
 		<!-- 4-3. > 화살표, >> 화살표  --> 
