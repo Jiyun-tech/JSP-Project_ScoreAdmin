@@ -132,24 +132,24 @@
 		<tr>
 		
 		<!-- 4-1. << 화살표, < 화살표 --> 
-		<td width="50"><p align="center"><a class="alink" href="./tableViewAll.jsp?from=<c:out value="${p.ppPage}"/>&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> << </a></p></td>
-		<td width="50"><p align="center"><a class="alink" href="./tableViewAll.jsp?from=<c:out value="${p.pPage}"/>&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> < </a></p></td>
+		<td width="50"><p align="center"><a class="alink" href="./tableViewAll.jsp?from=${p.ppPage}&count=${countPerPage}&target=${target}"> << </a></p></td>
+		<td width="50"><p align="center"><a class="alink" href="./tableViewAll.jsp?from=${p.pPage}&count=${countPerPage}&target=${target}"> < </a></p></td>
 
 		<c:forEach var="i" begin="${p.listFirst}" end="${p.listLast}" step="1">
 			<c:choose>
 				<c:when test="${i eq p.cPage}">
-				<td width=50 class="selectedPage"><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
+				<td width=50 class="selectedPage"><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=${countPerPage}&target=${target}"> ${i} </a></p></td>
 				</c:when>
 				<c:otherwise>
-				<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${i} </a></p></td>
+				<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${i}&count=${countPerPage}&target=${target}"> ${i} </a></p></td>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
 				
 		<!-- 4-3. > 화살표, >> 화살표  --> 
 		<!-- 페이지 이동 화살표 클릭 시의 Parameter 결정 (데이터 출력 시작점) --> 
-		<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=<c:out value="${p.nPage}"/>&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> > </a></p></td>
-		<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=<c:out value="${p.nnPage}"/>&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> >> </a></p></td>
+		<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${p.nPage}&count=${countPerPage}&target=${target}"> > </a></p></td>
+		<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${p.nnPage}&count=${countPerPage}&target=${target}"> >> </a></p></td>
 		</tr>
 		</table>
 		
