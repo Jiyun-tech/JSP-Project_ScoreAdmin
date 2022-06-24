@@ -147,19 +147,6 @@
 				</c:choose>
 			</c:if>
 		</c:forEach>
-		
-<%-- 		<c:forEach items="${pageList}" var="pageList"> --%>
-<%-- 			<c:if test="${pageList <= p.nnPage }"> --%>
-<%-- 				<c:choose> --%>
-<%-- 					<c:when test="${pageList == currentPage}"> --%>
-<%-- 					<td width=50 class="selectedPage"><p align=center><a class=alink href="./tableViewAll.jsp?from=${pageList}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${pageList} </a></p></td> --%>
-<%-- 					</c:when> --%>
-<%-- 					<c:otherwise> --%>
-<%-- 					<td width=50><p align=center><a class=alink href="./tableViewAll.jsp?from=${pageList}&count=<c:out value="${countPerPage}"/>&target=<c:out value="${target}"/>"> ${pageList} </a></p></td> --%>
-<%-- 					</c:otherwise> --%>
-<%-- 				</c:choose> --%>
-<%-- 			</c:if> --%>
-<%-- 		</c:forEach> --%>
 				
 		<!-- 4-3. > 화살표, >> 화살표  --> 
 		<!-- 페이지 이동 화살표 클릭 시의 Parameter 결정 (데이터 출력 시작점) --> 
