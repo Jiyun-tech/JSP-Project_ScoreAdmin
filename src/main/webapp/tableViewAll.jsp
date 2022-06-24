@@ -15,7 +15,7 @@
 	
 	// 객체 생성
 	List <ScoreItem> scoreItemList = new ArrayList<ScoreItem>();
-	Pagination p = new Pagination();
+// 	Pagination p = new Pagination();
 	
 	// Singleton Pattern 사용 (객체 새로 만들지 않고, 기존 만들어둔 instance 받아 사용)
 	ScoreItemService scoreItemService = ScoreItemServiceImpl.getInstance();
@@ -42,7 +42,7 @@
 	
 	// Pagenation 메서드 실행하여 return값 객체에 연결.
 	int totalCount = scoreItemService.countAll();	// 총 데이터 수
-	p = scoreItemService.getPagination(currentPage, countPerPage, pageSize, totalCount);
+	Pagination p = scoreItemService.getPagination(currentPage, countPerPage, pageSize, totalCount);
 	pageContext.setAttribute("p", p);	
 
 	// 출력 데이터
